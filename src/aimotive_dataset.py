@@ -8,21 +8,23 @@ from src.sequence import Sequence
 
 class AiMotiveDataset:
     """
-    Multimodal Autonomous Driving dataset.
-    The dataset consists of four cameras, two radars, one lidar sensor, and corresponding
-    3D bounding box annotations of dynamic objects.
+    AiMotive's traffic light/traffic sign dataset.
+    The dataset consists of four cameras and corresponding
+    3D bounding box annotations of traffic light or traffic sign objects.
 
     Attributes:
+        object_type: the type of object, that can be either traffic_light or traffic_sign
         dataset_index: a list of keyframe paths
-        data_loader: a DataLoader class for loading multimodal sensor data.
+        data_loader: a DataLoader class for loading sensor data.
     """
-    def __init__(self, root_dir: str, split: str = 'train'):
+    def __init__(self, root_dir: str, object_type: str):
         """
         Args:
             root_dir: path to the dataset
-            split: data split, either train or val
         """
-        self.dataset_index = self.get_frames(root_dir, split)
+        assert object_type in ["traffic_light", "traffic_sign"], "The object type must be either traffic_light or traffic_sign!"
+        self.object_type = object_type
+        self.dataset_index = self.get_frames(root_dir)
         self.data_loader = DataLoader(self.dataset_index)
 
     def __len__(self):
@@ -31,31 +33,31 @@ class AiMotiveDataset:
     def __getitem__(self, index: int) -> DataItem:
         return self.data_loader[self.dataset_index[index]]
 
-    def get_frames(self, path: str, split: str = 'train') -> List[str]:
+    def get_frames(self, path: str) -> List[str]:
         """
         Collects the keyframe paths.
 
         Args:
             path: path to the dataset
-            split: data split, either train or val
 
         Returns:
             data_paths: a list of keyframe paths
 
         """
         data_paths = []
-        odd_path = os.path.join(path, split)
-        for odd in os.listdir(odd_path):
-            for seq in os.listdir(os.path.join(odd_path, odd)):
+        odd_path = path
+        for odd in sorted(os.listdir(odd_path)):
+            for seq in sorted(os.listdir(os.path.join(path, odd))):
                 seq_path = os.path.join(odd_path, odd, seq)
-                sequence = Sequence(seq_path)
+                sequence = Sequence(seq_path, self.object_type)
                 data_paths.extend(sequence.get_frames())
 
         return data_paths
 
 
 if __name__ == '__main__':
-    root_directory = "/media/tamas.matuszka/shares/hackathondata/temp/aimotive_dataset"
-    train_dataset = AiMotiveDataset(root_directory, split='val')
-    for data in train_dataset:
-        print(data['annotations'].path)
+    root_directory = "../data"
+    dataset = AiMotiveDataset(root_directory, object_type='traffic_light')
+    for data in dataset:
+        print(data.annotations.path)
+

@@ -2,8 +2,6 @@ import os
 
 from src.annotation import Annotation
 from src.loaders.camera_loader import load_camera_data, CameraData
-from src.loaders.lidar_loader import load_lidar_data, LidarData
-from src.loaders.radar_loader import load_radar_data, RadarData
 
 
 class DataItem:
@@ -12,14 +10,10 @@ class DataItem:
 
     Attributes:
         annotations: Annotation instance
-        lidar_data: LidarData instance
-        radar_data: RadarData instance
         camera_data: CameraData instance
     """
-    def __init__(self, annotations: Annotation, lidar_data: LidarData, radar_data: RadarData, camera_data: CameraData):
+    def __init__(self, annotations: Annotation, camera_data: CameraData):
         self.annotations = annotations
-        self.lidar_data = lidar_data
-        self.radar_data = radar_data
         self.camera_data = camera_data
 
 
@@ -51,11 +45,9 @@ class DataLoader:
         data_folder = self.get_directory(path)
         frame_id = self.get_frame_id(path)
         annotations = Annotation(path)
-        lidar_data = load_lidar_data(data_folder, frame_id)
-        radar_data = load_radar_data(data_folder, frame_id)
         camera_data = load_camera_data(data_folder, frame_id)
 
-        return DataItem(annotations, lidar_data, radar_data, camera_data)
+        return DataItem(annotations,  camera_data)
 
     def get_directory(self, path: str) -> str:
         """

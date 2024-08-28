@@ -30,3 +30,4 @@ class CameraParams:
         self.focal_length = [intrinsic[0][0], intrinsic[1][1]]
         self.principal_point = [intrinsic[0][2], intrinsic[1][2]]
         self.xi = xi
+

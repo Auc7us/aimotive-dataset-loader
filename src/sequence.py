@@ -8,15 +8,18 @@ class Sequence:
 
     Attributes:
         path: path to the sequence
+        path_to_detections: relative path to the traffic light or traffic sign annotation
         keyframes: a list of keyframe paths
     """
-    def __init__(self, path: str) :
+    def __init__(self, path: str, object_type: str) :
         """
         Args:
             path: path to the sequence
         """
+        assert object_type in ["traffic_light", "traffic_sign"], "The object type must be either traffic_light or traffic_sign!"
         self.path = path
-        self.keyframes = sorted(os.listdir(os.path.join(path, 'dynamic', 'box', '3d_body')))
+        self.path_to_detections = "traffic_light/box/3d_body" if object_type == "traffic_light" else "traffic_sign/box/3d_body"
+        self.keyframes = sorted(os.listdir(os.path.join(path, self.path_to_detections)))
 
     def get_frames(self) -> List[str]:
         """
@@ -25,5 +28,5 @@ class Sequence:
         Returns:
             a list of keyframe paths
         """
-        return [os.path.join(self.path, 'dynamic', 'box', '3d_body', keyframe) for keyframe in self.keyframes]
+        return [os.path.join(self.path, self.path_to_detections, keyframe) for keyframe in self.keyframes]
 

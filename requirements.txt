@@ -1,6 +1,3 @@
-laspy[laszip]
-numpy
-numpy-quaternion
-opencv-python
-scipy
-tqdm
+numpy==1.26.4
+numpy-quaternion==2023.0.4
+opencv-python==4.10.0.84

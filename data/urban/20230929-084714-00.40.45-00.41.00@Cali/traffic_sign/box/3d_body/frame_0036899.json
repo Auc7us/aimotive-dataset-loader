@@ -1,0 +1,408 @@
+{
+    "CapturedObjects": [
+        {
+            "ActorName": "TRAFFIC_SIGN 604",
+            "ObjectId": 604,
+            "BoundingBox3D Origin X": 11.953757322700769,
+            "BoundingBox3D Origin Y": 13.87161020952044,
+            "BoundingBox3D Origin Z": 1.5779151991009712,
+            "BoundingBox3D Extent X": 0.1,
+            "BoundingBox3D Extent Y": 0.6542573677519435,
+            "BoundingBox3D Extent Z": 0.6696639461456285,
+            "BoundingBox3D Orientation Quat W": -0.4157731791401178,
+            "BoundingBox3D Orientation Quat X": 0.0073989956836793,
+            "BoundingBox3D Orientation Quat Y": 0.0136279446442896,
+            "BoundingBox3D Orientation Quat Z": 0.9093361300945676,
+            "ObjectType": "TRAFFIC_SIGN",
+            "Occluded": {
+                "F_MIDRANGECAM_C": 0.001785603701137
+            },
+            "Truncated": 0,
+            "ObjectMeta": {
+                "SourceID": 604,
+                "SubType": "us_stop",
+                "Text": "",
+                "OcrVersion": 10006
+            }
+        },
+        {
+            "ActorName": "TRAFFIC_SIGN 605",
+            "ObjectId": 605,
+            "BoundingBox3D Origin X": 28.923155660502744,
+            "BoundingBox3D Origin Y": -3.495838026079582,
+            "BoundingBox3D Origin Z": 5.399861638434231,
+            "BoundingBox3D Extent X": 0.1,
+            "BoundingBox3D Extent Y": 1.675241656574072,
+            "BoundingBox3D Extent Z": 0.7136703424772214,
+            "BoundingBox3D Orientation Quat W": 0.0393775091796731,
+            "BoundingBox3D Orientation Quat X": 0.0004478096466809,
+            "BoundingBox3D Orientation Quat Y": 0.015495591914083,
+            "BoundingBox3D Orientation Quat Z": 0.9991041476585704,
+            "ObjectType": "TRAFFIC_SIGN",
+            "Occluded": {
+                "F_MIDRANGECAM_C": 0.0099714081734418
+            },
+            "Truncated": 0,
+            "ObjectMeta": {
+                "SourceID": 605,
+                "SubType": "unknown",
+                "Text": "Bryson",
+                "OcrVersion": 10006
+            }
+        },
+        {
+            "ActorName": "TRAFFIC_SIGN 606",
+            "ObjectId": 606,
+            "BoundingBox3D Origin X": 28.75808251713533,
+            "BoundingBox3D Origin Y": 2.558272249501897,
+            "BoundingBox3D Origin Z": 6.913870601914823,
+            "BoundingBox3D Extent X": 0.1,
+            "BoundingBox3D Extent Y": 0.6808865710446399,
+            "BoundingBox3D Extent Z": 0.8102549796546726,
+            "BoundingBox3D Orientation Quat W": -0.0293413440684793,
+            "BoundingBox3D Orientation Quat X": 0.0015126901851771,
+            "BoundingBox3D Orientation Quat Y": 0.0154283700138083,
+            "BoundingBox3D Orientation Quat Z": 0.9994492296737116,
+            "ObjectType": "TRAFFIC_SIGN",
+            "Occluded": {
+                "F_MIDRANGECAM_C": 7.059213385218754e-05
+            },
+            "Truncated": 0,
+            "ObjectMeta": {
+                "SourceID": 606,
+                "SubType": "us_white_ground_rectangle_unknown",
+                "Text": "",
+                "OcrVersion": 10006
+            }
+        },
+        {
+            "ActorName": "TRAFFIC_SIGN 607",
+            "ObjectId": 607,
+            "BoundingBox3D Origin X": 9.32813328048178,
+            "BoundingBox3D Origin Y": -10.60631562335766,
+            "BoundingBox3D Origin Z": 2.7740241596475244,
+            "BoundingBox3D Extent X": 0.1,
+            "BoundingBox3D Extent Y": 0.6534787456868417,
+            "BoundingBox3D Extent Z": 0.6851783530544237,
+            "BoundingBox3D Orientation Quat W": 0.3639462831205748,
+            "BoundingBox3D Orientation Quat X": -0.0046438625164304,
+            "BoundingBox3D Orientation Quat Y": 0.0147901506090845,
+            "BoundingBox3D Orientation Quat Z": 0.9312909260744504,
+            "ObjectType": "TRAFFIC_SIGN",
+            "Occluded": {
+                "F_MIDRANGECAM_C": 0.0009639853960834
+            },
+            "Truncated": 0,
+            "ObjectMeta": {
+                "SourceID": 607,
+                "SubType": "us_yellow_ground_diamond_unknown",
+                "Text": "OUTLET",
+                "OcrVersion": 10006
+            }
+        },
+        {
+            "ActorName": "TRAFFIC_SIGN 608",
+            "ObjectId": 608,
+            "BoundingBox3D Origin X": 43.50133858375921,
+            "BoundingBox3D Origin Y": -3.262371393473586,
+            "BoundingBox3D Origin Z": 2.519232320599258,
+            "BoundingBox3D Extent X": 0.1,
+            "BoundingBox3D Extent Y": 0.3973643084709372,
+            "BoundingBox3D Extent Z": 0.4863847471929617,
+            "BoundingBox3D Orientation Quat W": 0.0802230924272357,
+            "BoundingBox3D Orientation Quat X": -0.0001817910452978,
+            "BoundingBox3D Orientation Quat Y": 0.0155009922483905,
+            "BoundingBox3D Orientation Quat Z": 0.996656380922102,
+            "ObjectType": "TRAFFIC_SIGN",
+            "Occluded": {
+                "F_MIDRANGECAM_C": 0.0014469787711277
+            },
+            "Truncated": 0,
+            "ObjectMeta": {
+                "SourceID": 608,
+                "SubType": "us_yellow_ground_diamond_unknown",
+                "Text": "11",
+                "OcrVersion": 10006
+            }
+        },
+        {
+            "ActorName": "TRAFFIC_SIGN 609",
+            "ObjectId": 609,
+            "BoundingBox3D Origin X": 78.27745633027735,
+            "BoundingBox3D Origin Y": -7.657005134853534,
+            "BoundingBox3D Origin Z": 2.300005887635052,
+            "BoundingBox3D Extent X": 0.1,
+            "BoundingBox3D Extent Y": 0.4327197226534073,
+            "BoundingBox3D Extent Z": 0.5787043291211466,
+            "BoundingBox3D Orientation Quat W": 0.2025864286911383,
+            "BoundingBox3D Orientation Quat X": -0.0020910000463427,
+            "BoundingBox3D Orientation Quat Y": 0.0153602568186397,
+            "BoundingBox3D Orientation Quat Z": 0.9791416798091284,
+            "ObjectType": "TRAFFIC_SIGN",
+            "Occluded": {
+                "F_MIDRANGECAM_C": 0.9996697902679444
+            },
+            "Truncated": 0,
+            "ObjectMeta": {
+                "SourceID": 609,
+                "SubType": "unknown",
+                "Text": "",
+                "OcrVersion": 10006
+            }
+        },
+        {
+            "ActorName": "TRAFFIC_SIGN 610",
+            "ObjectId": 610,
+            "BoundingBox3D Origin X": 89.911276125722,
+            "BoundingBox3D Origin Y": 13.467839331104187,
+            "BoundingBox3D Origin Z": 1.9420688655227425,
+            "BoundingBox3D Extent X": 0.1,
+            "BoundingBox3D Extent Y": 0.5673764564289475,
+            "BoundingBox3D Extent Z": 0.8397778011530023,
+            "BoundingBox3D Orientation Quat W": -0.1758452065044729,
+            "BoundingBox3D Orientation Quat X": 0.0037683900464692,
+            "BoundingBox3D Orientation Quat Y": 0.015038557835831,
+            "BoundingBox3D Orientation Quat Z": 0.9842957402956062,
+            "ObjectType": "TRAFFIC_SIGN",
+            "Occluded": {
+                "F_MIDRANGECAM_C": 0.9997487664222716
+            },
+            "Truncated": 0,
+            "ObjectMeta": {
+                "SourceID": 610,
+                "SubType": "us_yellow_ground_diamond_unknown",
+                "Text": "",
+                "OcrVersion": 10006
+            }
+        },
+        {
+            "ActorName": "TRAFFIC_SIGN 611",
+            "ObjectId": 611,
+            "BoundingBox3D Origin X": 99.76101163876592,
+            "BoundingBox3D Origin Y": -1.4588678196887486,
+            "BoundingBox3D Origin Z": 2.022006523795426,
+            "BoundingBox3D Extent X": 0.1,
+            "BoundingBox3D Extent Y": 0.6647898721773063,
+            "BoundingBox3D Extent Z": 0.4925958622564428,
+            "BoundingBox3D Orientation Quat W": 0.0714166475642196,
+            "BoundingBox3D Orientation Quat X": -4.0386985693455686e-05,
+            "BoundingBox3D Orientation Quat Y": 0.0155024597154391,
+            "BoundingBox3D Orientation Quat Z": 0.9973260923902224,
+            "ObjectType": "TRAFFIC_SIGN",
+            "Occluded": {
+                "F_MIDRANGECAM_C": 0.9999022483825684
+            },
+            "Truncated": 0,
+            "ObjectMeta": {
+                "SourceID": 611,
+                "SubType": "unknown",
+                "Text": "P",
+                "OcrVersion": 10006
+            }
+        },
+        {
+            "ActorName": "TRAFFIC_SIGN 612",
+            "ObjectId": 612,
+            "BoundingBox3D Origin X": 136.28216101749604,
+            "BoundingBox3D Origin Y": -0.0795833225711248,
+            "BoundingBox3D Origin Z": 4.677251274697483,
+            "BoundingBox3D Extent X": 0.1,
+            "BoundingBox3D Extent Y": 2.015689627696113,
+            "BoundingBox3D Extent Z": 0.6071013615992222,
+            "BoundingBox3D Orientation Quat W": 0.0327520152886986,
+            "BoundingBox3D Orientation Quat X": 0.0005615380129455,
+            "BoundingBox3D Orientation Quat Y": 0.0154927055938209,
+            "BoundingBox3D Orientation Quat Z": 0.9993432674726797,
+            "ObjectType": "TRAFFIC_SIGN",
+            "Occluded": {
+                "F_MIDRANGECAM_C": 0.9983901977539062
+            },
+            "Truncated": 0,
+            "ObjectMeta": {
+                "SourceID": 612,
+                "SubType": "unknown",
+                "Text": "",
+                "OcrVersion": 10006
+            }
+        },
+        {
+            "ActorName": "TRAFFIC_SIGN 613",
+            "ObjectId": 613,
+            "BoundingBox3D Origin X": 141.8451596873183,
+            "BoundingBox3D Origin Y": -0.3236603311670478,
+            "BoundingBox3D Origin Z": 2.154741680249572,
+            "BoundingBox3D Extent X": 0.1,
+            "BoundingBox3D Extent Y": 0.821519601845871,
+            "BoundingBox3D Extent Z": 1.04655705856691,
+            "BoundingBox3D Orientation Quat W": 0.0336725607688953,
+            "BoundingBox3D Orientation Quat X": 0.0005500879248882,
+            "BoundingBox3D Orientation Quat Y": 0.01549313803867,
+            "BoundingBox3D Orientation Quat Z": 0.9993126731550316,
+            "ObjectType": "TRAFFIC_SIGN",
+            "Occluded": {
+                "F_MIDRANGECAM_C": 0.0011405140394344
+            },
+            "Truncated": 0,
+            "ObjectMeta": {
+                "SourceID": 613,
+                "SubType": "unknown",
+                "Text": "AHEAD",
+                "OcrVersion": 10006
+            }
+        },
+        {
+            "ActorName": "TRAFFIC_SIGN 614",
+            "ObjectId": 614,
+            "BoundingBox3D Origin X": 122.55254634749872,
+            "BoundingBox3D Origin Y": 18.996402940159896,
+            "BoundingBox3D Origin Z": 1.370661779306829,
+            "BoundingBox3D Extent X": 0.1,
+            "BoundingBox3D Extent Y": 0.7431382892211243,
+            "BoundingBox3D Extent Z": 0.8068183363710659,
+            "BoundingBox3D Orientation Quat W": -0.4050844937704565,
+            "BoundingBox3D Orientation Quat X": 0.0072466660100236,
+            "BoundingBox3D Orientation Quat Y": 0.0137104075465752,
+            "BoundingBox3D Orientation Quat Z": 0.9141477251863506,
+            "ObjectType": "TRAFFIC_SIGN",
+            "Occluded": {
+                "F_MIDRANGECAM_C": 0.9997517466545104
+            },
+            "Truncated": 0,
+            "ObjectMeta": {
+                "SourceID": 614,
+                "SubType": "unknown",
+                "Text": "",
+                "OcrVersion": 10006
+            }
+        },
+        {
+            "ActorName": "TRAFFIC_SIGN 615",
+            "ObjectId": 615,
+            "BoundingBox3D Origin X": 131.09397659307797,
+            "BoundingBox3D Origin Y": -7.557186885387637,
+            "BoundingBox3D Origin Z": 2.264195330440998,
+            "BoundingBox3D Extent X": 0.1,
+            "BoundingBox3D Extent Y": 0.7208321150109754,
+            "BoundingBox3D Extent Z": 0.6150844709069305,
+            "BoundingBox3D Orientation Quat W": 0.157511544286949,
+            "BoundingBox3D Orientation Quat X": -0.0013829442788206,
+            "BoundingBox3D Orientation Quat Y": 0.0154409257407071,
+            "BoundingBox3D Orientation Quat Z": 0.987395452032129,
+            "ObjectType": "TRAFFIC_SIGN",
+            "Occluded": {
+                "F_MIDRANGECAM_C": 0.999653697013855
+            },
+            "Truncated": 0,
+            "ObjectMeta": {
+                "SourceID": 615,
+                "SubType": "us_yellow_ground_diamond_unknown",
+                "Text": "",
+                "OcrVersion": 10006
+            }
+        },
+        {
+            "ActorName": "TRAFFIC_SIGN 616",
+            "ObjectId": 616,
+            "BoundingBox3D Origin X": 156.34258339405096,
+            "BoundingBox3D Origin Y": -0.009787387563847,
+            "BoundingBox3D Origin Z": 2.5837854519486427,
+            "BoundingBox3D Extent X": 0.1,
+            "BoundingBox3D Extent Y": 0.5572884027437033,
+            "BoundingBox3D Extent Z": 0.5924573148805717,
+            "BoundingBox3D Orientation Quat W": 0.0459996942947775,
+            "BoundingBox3D Orientation Quat X": 0.0003579125482839,
+            "BoundingBox3D Orientation Quat Y": 0.0154988654184403,
+            "BoundingBox3D Orientation Quat Z": 0.9988211477507551,
+            "ObjectType": "TRAFFIC_SIGN",
+            "Occluded": {
+                "F_MIDRANGECAM_C": 0.9994612336158752
+            },
+            "Truncated": 0,
+            "ObjectMeta": {
+                "SourceID": 616,
+                "SubType": "unknown",
+                "Text": "",
+                "OcrVersion": 10006
+            }
+        },
+        {
+            "ActorName": "TRAFFIC_SIGN 617",
+            "ObjectId": 617,
+            "BoundingBox3D Origin X": 135.75255645727884,
+            "BoundingBox3D Origin Y": -0.7704987218312453,
+            "BoundingBox3D Origin Z": 2.575325003825128,
+            "BoundingBox3D Extent X": 0.0999999999999999,
+            "BoundingBox3D Extent Y": 0.7647942581555,
+            "BoundingBox3D Extent Z": 0.185378029919662,
+            "BoundingBox3D Orientation Quat W": 0.1705169722680375,
+            "BoundingBox3D Orientation Quat X": -0.0015842694757708,
+            "BoundingBox3D Orientation Quat Y": 0.0154216603889382,
+            "BoundingBox3D Orientation Quat Z": 0.9852327768855532,
+            "ObjectType": "TRAFFIC_SIGN",
+            "Occluded": {
+                "F_MIDRANGECAM_C": 0.0
+            },
+            "Truncated": 0,
+            "ObjectMeta": {
+                "SourceID": 617,
+                "SubType": "us_white_ground_rectangle_unknown",
+                "Text": "",
+                "OcrVersion": 10006
+            }
+        },
+        {
+            "ActorName": "TRAFFIC_SIGN 618",
+            "ObjectId": 618,
+            "BoundingBox3D Origin X": 158.09206782484216,
+            "BoundingBox3D Origin Y": 0.5360759817413054,
+            "BoundingBox3D Origin Z": 1.9758049929514527,
+            "BoundingBox3D Extent X": 0.0999999999999999,
+            "BoundingBox3D Extent Y": 0.3186681614729488,
+            "BoundingBox3D Extent Z": 0.468749094353403,
+            "BoundingBox3D Orientation Quat W": 0.2819571244347356,
+            "BoundingBox3D Orientation Quat X": -0.0033336742106252,
+            "BoundingBox3D Orientation Quat Y": 0.0151401720963525,
+            "BoundingBox3D Orientation Quat Z": 0.9593017469939504,
+            "ObjectType": "TRAFFIC_SIGN",
+            "Occluded": {
+                "F_MIDRANGECAM_C": 0.999582588672638
+            },
+            "Truncated": 0,
+            "ObjectMeta": {
+                "SourceID": 618,
+                "SubType": "us_white_ground_rectangle_unknown",
+                "Text": "",
+                "OcrVersion": 10006
+            }
+        },
+        {
+            "ActorName": "TRAFFIC_SIGN 619",
+            "ObjectId": 619,
+            "BoundingBox3D Origin X": 187.42445750674776,
+            "BoundingBox3D Origin Y": 1.2434334199060686,
+            "BoundingBox3D Origin Z": 2.4603988751769066,
+            "BoundingBox3D Extent X": 0.1,
+            "BoundingBox3D Extent Y": 0.6539907426792017,
+            "BoundingBox3D Extent Z": 1.2534023493860695,
+            "BoundingBox3D Orientation Quat W": 0.0552506147423833,
+            "BoundingBox3D Orientation Quat X": 0.0002161725172757,
+            "BoundingBox3D Orientation Quat Y": 0.0155017800679954,
+            "BoundingBox3D Orientation Quat Z": 0.9983521511244188,
+            "ObjectType": "TRAFFIC_SIGN",
+            "Occluded": {
+                "F_MIDRANGECAM_C": 0.995628833770752
+            },
+            "Truncated": 0,
+            "ObjectMeta": {
+                "SourceID": 619,
+                "SubType": "us_speedlimit_20",
+                "Text": "SCHOOL CED UMIT 20",
+                "OcrVersion": 10006
+            }
+        }
+    ],
+    "FrameId": 36899,
+    "Timestamp": 0,
+    "TimestampMiddle": 0,
+    "VERSION": 10006
+}
