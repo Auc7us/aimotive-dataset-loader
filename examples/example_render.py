@@ -10,9 +10,11 @@ if __name__ == '__main__':
                         type=str, help="Root dir of aiMotive TL/TS Dataset.")
     parser.add_argument("--object-type", default="traffic_sign",
                         type=str, help="Object type. Options: [traffic_sign, traffic_light]")
+    parser.add_argument("--dimension", default="3d",
+                        type=str, help="Object dimension. Options: [3d, 2d]")
     args = parser.parse_args()
 
     train_dataset = AiMotiveDataset(args.root_dir, args.object_type)
-    renderer = Renderer(train_dataset.object_type)
+    renderer = Renderer(train_dataset.object_type, args.dimension)
     for data in train_dataset:
         renderer.render(data)
