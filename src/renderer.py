@@ -15,8 +15,9 @@ class Renderer:
     """
     Color = Tuple[int, int, int]
 
-    def __init__(self, object_type: str):
+    def __init__(self, object_type: str, dimension: str = "3d"):
         self.object_type = object_type
+        self.dimension = dimension
         self.image_resize_ratio = 60
 
     def render(self, data: DataItem):
@@ -27,11 +28,11 @@ class Renderer:
             data: DataItem storing the sensor data and annotations
         """
         if data.camera_data:
-            self.render_camera(data.camera_data, data.annotations)
+            self.render_camera(data.camera_data, data.annotations, self.dimension)
 
         cv2.waitKey(500)
 
-    def render_camera(self, camera_data: CameraData, annotation: Annotation):
+    def render_camera(self, camera_data: CameraData, annotation: Annotation, dimension: str = None):
         """
         Renders camera data for a given keyframe.
 
@@ -42,14 +43,13 @@ class Renderer:
         for camera in camera_data:
             img = camera.image
             camera_params = camera.camera_params
-
-            img = self.plot_image_annotations(img, annotation, camera_params, camera.name)
+            img = self.plot_image_annotations(img, annotation, camera_params, camera.name, dimension)
             img = self.resize_image(camera.name, img)
 
             cv2.imshow(camera.name, img)
 
     def plot_image_annotations(self, img: np.array, annotation: Annotation, camera_params: CameraParams,
-                               sensor_name: str) -> np.array:
+                               sensor_name: str, dimension: str = None) -> np.array:
         """
         Visualizes annotations on images corresponding to a given camera.
 
@@ -77,7 +77,7 @@ class Renderer:
                     boxes_tl_by_colors.setdefault(tl_color, []).append(box)
             for color, boxes_ in boxes_tl_by_colors.items():
                 box_list = get_boxes(boxes_, camera_params)
-                render_3d_boxes_as_lines_imgproc(img, box_list, camera_params["imgproc_camparams"], color=color, thickness=thickness)
+                render_3d_boxes_as_lines_imgproc(img, box_list, camera_params["imgproc_camparams"], color=color, thickness=thickness, dimension=dimension)
 
         return img
 

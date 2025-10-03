@@ -381,7 +381,7 @@ box3d_line_idx_ext = box3d_line_idx + [8, 9]
 def render_3d_boxes_as_lines_imgproc(img, boxes, cameraParams, color=(100, 230, 20), thickness=1,
                                      draw_ids=True, id_offset=(10, 0), fontColor=(200, 200, 250),
                                      fontFace=cv2.FONT_HERSHEY_COMPLEX_SMALL, fontThickness=1,
-                                     draw_occlusions=False):
+                                     draw_occlusions=False, dimension: str = None):
     if len(boxes) == 0:
         return
     lines_all = []
@@ -389,34 +389,60 @@ def render_3d_boxes_as_lines_imgproc(img, boxes, cameraParams, color=(100, 230, 
 
     id_positions = []
     ids = []
-    for box3d in boxes:
-        corners = get_box3d_corners_ext(box3d)
-        corners_all.append(corners[:8])
-        lines = corners[box3d_line_idx_ext]
-        lines_all.append(lines)
 
-        id_positions.append(corners[0])
-        ids.append(box3d.object_id)
-    lines_all = np.array(lines_all)
-    render_lines_imgproc(img, lines_all, cameraParams, color=color, thickness=thickness)
+    if dimension == "2d":
+        for box3d in boxes:
+            corners = get_box3d_corners_ext(box3d)
+            corners_all.append(corners[:8])
+            lines = corners[box3d_line_idx_ext]
+            lines_all.append(lines)
 
-    if draw_ids or draw_occlusions:
-        id_positions = np.array(id_positions)
-        id_positions_proj, id_positions_proj_mask = get_projected_pts_with_mask_imgproc(id_positions, cameraParams,
-                                                                                        img.shape[1], img.shape[0])
-        id_positions = id_positions[id_positions_proj_mask]
-        ids = np.array(ids)[id_positions_proj_mask]
-        for id_position, id_position_proj, id in zip(id_positions, id_positions_proj, ids):
-            x = np.linalg.norm(id_position)
-            fontScale = np.maximum((1 - x / 200), 0) ** 2 * 2
-            if fontScale == 0.0:
-                continue
-            u, v = id_position_proj.astype(int)[:2] + np.array(id_offset)
-            u, v = int(u), int(v)
+            projected_pts, mask = get_projected_pts_with_mask_imgproc(
+                corners[:8], cameraParams, img.shape[1], img.shape[0])
+            if mask.sum() == 8:
+                x0, y0 = projected_pts[:, 0].min(), projected_pts[:, 1].min()
+                x1, y1 = projected_pts[:, 0].max(), projected_pts[:, 1].max()
 
-            text = f"{id}" if draw_ids else ""
-            cv2.putText(img, org=(u, v), text=text, color=fontColor,
-                        fontFace=fontFace, fontScale=fontScale, thickness=fontThickness, lineType=cv2.LINE_AA)
+                class_id = {
+                    (0, 255, 0): 0,
+                    (0, 255, 255): 1,
+                    (0, 0, 255): 2,
+                    (0, 0, 0): 3
+                }.get(color, None)
+
+                if class_id is not None:
+                    # Draw rectangle on image as 2D bbox with class_id
+                    cv2.rectangle(img, (int(x0), int(y0)), (int(x1), int(y1)), color, 2)
+                    cv2.putText(img, str(class_id), (int(x0), int(y0) - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, color, 2)
+    else:
+        for box3d in boxes:
+            corners = get_box3d_corners_ext(box3d)
+            corners_all.append(corners[:8])
+            lines = corners[box3d_line_idx_ext]
+            lines_all.append(lines)
+
+            id_positions.append(corners[0])
+            ids.append(box3d.object_id)
+        lines_all = np.array(lines_all)
+        render_lines_imgproc(img, lines_all, cameraParams, color=color, thickness=thickness)
+
+        if draw_ids or draw_occlusions:
+            id_positions = np.array(id_positions)
+            id_positions_proj, id_positions_proj_mask = get_projected_pts_with_mask_imgproc(id_positions, cameraParams,
+                                                                                            img.shape[1], img.shape[0])
+            id_positions = id_positions[id_positions_proj_mask]
+            ids = np.array(ids)[id_positions_proj_mask]
+            for id_position, id_position_proj, id in zip(id_positions, id_positions_proj, ids):
+                x = np.linalg.norm(id_position)
+                fontScale = np.maximum((1 - x / 200), 0) ** 2 * 2
+                if fontScale == 0.0:
+                    continue
+                u, v = id_position_proj.astype(int)[:2] + np.array(id_offset)
+                u, v = int(u), int(v)
+
+                text = f"{id}" if draw_ids else ""
+                cv2.putText(img, org=(u, v), text=text, color=fontColor,
+                            fontFace=fontFace, fontScale=fontScale, thickness=fontThickness, lineType=cv2.LINE_AA)
 
 def get_boxes(dict_boxes, camera):
     A_cam_to_view = np.array([[0, 0, 1],
@@ -428,22 +454,23 @@ def get_boxes(dict_boxes, camera):
     newboxes = []
     for box in dict_boxes:
         rot_quat = quaternion.quaternion(box["BoundingBox3D Orientation Quat W"],
-                                            box["BoundingBox3D Orientation Quat X"],
-                                            box["BoundingBox3D Orientation Quat Y"],
-                                            box["BoundingBox3D Orientation Quat Z"])
+                                         box["BoundingBox3D Orientation Quat X"],
+                                         box["BoundingBox3D Orientation Quat Y"],
+                                         box["BoundingBox3D Orientation Quat Z"])
 
         pos = box["BoundingBox3D Origin X"], box["BoundingBox3D Origin Y"], box["BoundingBox3D Origin Z"]
         sizes = box['BoundingBox3D Extent X'], box['BoundingBox3D Extent Y'], box['BoundingBox3D Extent Z']
 
         trafo_body = Transform(rot_quat, pos)
-        trafo_view = (trafo_body * trafo_cam2body.inv()).axis_swap(A_cam_to_view)
+        trafo_view = (trafo_body * trafo_cam2body.inv()
+                      ).axis_swap(A_cam_to_view)
         pos = trafo_view.translation
         rot_quat = trafo_view.rotation_quat
         sizes = np.abs(sizes @ A_cam_to_view)
 
         width, height, length = sizes
         newbox = Box3d(pos, size=[width, height, length], ori_quat=rot_quat, object_id=box["ObjectId"],
-                        object_type=box.get("ObjectType"), object_meta=box.get("ObjectMeta"))
+                       object_type=box.get("ObjectType"), object_meta=box.get("ObjectMeta"))
 
         newboxes.append(newbox)
     return newboxes
